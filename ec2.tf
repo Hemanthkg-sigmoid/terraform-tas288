@@ -32,7 +32,8 @@ resource "aws_instance" "public_vm" {
   instance_type = "t2.micro"
   key_name      = aws_key_pair.key_pair.key_name
   subnet_id     = aws_subnet.public_subnet.id
-  vpc_security_group_ids = [aws_security_group.web_sg.id]  
+  vpc_security_group_ids = [aws_security_group.web_sg.id]  # Use security_group_ids instead of security_groups
+
   tags = {
     Name = "PublicVM"
   }
