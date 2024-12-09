@@ -2,13 +2,14 @@ pipeline {
     agent any
 
     environment {
-        TERRAFORM_WORKSPACE = 'default'
+        AWS_ACCESS_KEY_ID = credentials('aws-credentials')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-credentials')
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Hemanthkg-sigmoid/terraform-tas288.git'
+                git branch: 'main', url: 'https://github.com/Hemanthkg-sigmoid/terraform-tas288.git'
             }
         }
         stage('Terraform Init') {
