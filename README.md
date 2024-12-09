@@ -1,6 +1,6 @@
-#Terraform Assignment
+# Terraform Assignment
 
-##Features
+## Features
 
 - Creates a custom VPC with public and private subnets, an internet gateway, and route tables.  
 - Dynamically generates an SSH key pair for secure instance access.  
